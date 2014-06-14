@@ -91,7 +91,7 @@ def configure(ctx):
     ctx.add_os_flags('NVCC')
     ctx.add_os_flags('CUDAFLAGS')
     ctx.env.append_value('CXXFLAGS', ['-std=c++11', '-fopenmp'])
-    ctx.env.append_value('LINKFLAGS', ['-fopenmp'])
+    ctx.env.append_value('LINKFLAGS', ['-fopenmp', '-L/home/demidov/work/bruce/ssbench/clogs/build'])
     for arch, code in [('20', '20'), ('20', '21'), ('30', '30'), ('32', '32'), ('35', '35')]:
         ctx.env.append_value('CUDAFLAGS', ['-gencode', 'arch=compute_{},code=sm_{}'.format(arch, code)])
 
